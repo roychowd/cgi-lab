@@ -1,0 +1,21 @@
+1. import os and print(os.envrion)
+2. In the QUERY_STRING variable
+3. in the HTTP_USER_AGENT variable
+4.print(cgi.FieldStorage()): in the cgi Fieldstorage  
+5.form_ok = username==secret.username and password==secret.password
+if form_ok: 
+    print("Set-Cookie: username=", secret.username)
+    print("Set-Cookie: password=", secret.password)
+6.c = SimpleCookie(os.environ["HTTP_COOKIE"])
+c_username = None
+c_password = None
+if c.get("username"):
+    c_username = c.get("username").value 
+if c.get("password"):
+    c_username = c.get("password").value 
+
+cookie_ok = c_username == secret.password and c_password ==secret.password
+if cookie_ok:
+    username=c_username
+    password=c_password
+7. Cookies hold some data for a client in a website, saved on the browser,  
